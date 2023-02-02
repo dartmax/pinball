@@ -1,0 +1,16 @@
+{
+  "env": {
+    "jest": true,
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "ts-react-important-stuff",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@babel/eslint-parser",
+  "rules": {
+    "jsx-a11y/control-has-associated-label": "off",
+    "no-multiple-empty-lines": ["error", { "max": 2 }]
+  }
+}
