@@ -9,10 +9,15 @@ Redux-thunk
 SCSS
 Jest
 
+### Version of engine:
+node -v: v18.7.0
+npm -v: 8.18.0
 
-## Available Scripts
+## Install and start:
 
 In the project directory, you can run:
+
+### `npm install`
 
 ### `npm start`
 
