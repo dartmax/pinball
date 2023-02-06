@@ -1,3 +1,5 @@
+Published: [![Netlify Status](https://api.netlify.com/api/v1/badges/db7cc7db-21e1-4b4e-9a87-21afa75babfd/deploy-status)](https://app.netlify.com/sites/frolicking-blancmange-74d4c7/deploys) [https://pinball.app/](https://frolicking-blancmange-74d4c7.netlify.app/)
+
 # PinBall Map
 Using:
 React
