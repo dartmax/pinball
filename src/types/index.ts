@@ -1,1 +1,1 @@
-export * as powerBall from "./powerBall";
+export * as powerBall from "./pinBall";

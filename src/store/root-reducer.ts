@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import * as types from "../types";
-import powerBallReducer from "./powerBall/powerBall.reducer";
+import powerBallReducer from "./pinBall/pinBall.reducer";
 
 export interface RootState {
   powerBall: types.powerBall.State;

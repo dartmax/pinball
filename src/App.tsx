@@ -1,26 +1,24 @@
 import React from 'react';
+import store from "./config/store";
+import {Provider} from "react-redux";
+
 import './index.scss';
 import Header from "./components/header/Header";
-import {Provider} from "react-redux";
-import {createStore} from "redux";
-import rootReducer from "./store/root-reducer";
-import PowerBallMap from "./components/powerBallMap/PowerBallMap";
+import PinBallMap from "./components/pinBallMap/PinBallMap";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-        <div className="App-header">
-          <PowerBallMap />
-        </div>
-    </div>
+  <div className="App">
+    <Header />
+      <div className="App-header">
+        <PinBallMap />
+      </div>
+  </div>
   );
 }
 
 
 const AppWrapper = () => {
-  const store = createStore(rootReducer);
-
   return (
     <Provider store={store}>
       <App />

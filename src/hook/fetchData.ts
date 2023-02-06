@@ -1,17 +1,20 @@
+//ts-ignore
 import axios from "axios";
 
-const fetchData = async (api: string, setData: any) => {
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-  const res = await axios.get(api, config);
-  if (res && res.data) {
-    setData(res.data);
-
-    return res;
+async function fetchData(api: string, setData: any) {
+  try {
+    const res = await axios.get(api, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (res.status === 200 && res.data) {
+      setData(res.data);
+      return res;
+    }
+  } catch (error) {
+    if (error) console.error(error);
   }
-};
+}
 
 export default fetchData;

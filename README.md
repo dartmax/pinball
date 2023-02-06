@@ -1,8 +1,9 @@
-# PowerBall Map
+# PinBall Map
 Using:
 React
 Redux-thunk
 SCSS
+Jest
 
 
 ## Available Scripts
@@ -15,9 +16,12 @@ Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
-### `npm test`
+## Run test and coverage:
 
 Launches the test runner in the interactive watch mode.\
+### `npx react-scripts test --env=./src/tests/custom-test-env.js --coverage`
+
+## Build the project:
 
 ### `npm run build`
 

@@ -5,6 +5,6 @@ const getAllState = (state: RootState): powerBall.State => {
   return state.powerBall;
 };
 
-export const powerBallSelectors = {
+export const pinBallSelectors = {
   getAllState,
 };
