@@ -11,16 +11,16 @@ export type Actions =
 
 export interface SetFilterData {
   type: actionsTypes.FILTER_DATA;
-  payload: any;
+  payload: Record<string, any>;
 }
 
 export interface SetMyLongitude {
   type: actionsTypes.MY_LONGITUDE;
-  payload: any;
+  payload: string;
 }
 export interface SetMyLatitude {
   type: actionsTypes.MY_LATITUDE;
-  payload: any;
+  payload: string;
 }
 
 export interface ResetPowerBallState {
