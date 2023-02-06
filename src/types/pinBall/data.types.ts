@@ -1,5 +1,5 @@
 export interface State {
-  filteredData: any,
+  filteredData: Record<string, any>,
   myLongitude: string,
   myLatitude: string,
 }

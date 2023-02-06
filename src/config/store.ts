@@ -3,7 +3,7 @@ import { createStore, compose, applyMiddleware } from "redux";
 import rootReducer from "../store/root-reducer";
 import { logger } from "redux-logger";
 
-const actionSanitizer = (action: any) =>
+const actionSanitizer = (action: Record<string, any>) =>
   action.type.includes("LONG_BLOB") && action.payload
     ? { ...action, payload: "<<LONG_BLOB>>" }
     : action;
@@ -18,7 +18,7 @@ const bindMiddleware = (middleware: any) => {
         // see https://github.com/zalmoxisus/redux-devtools-extension/tree/94f7e53800f4665bddc9b7438c5cc75cfb4547cc#12-advanced-store-setup
         // section 1.2
         actionSanitizer,
-        stateSanitizer: (state: any) => state,
+        stateSanitizer: (state: Record<string, any>) => state,
       }) || compose;
     return composeEnhancers(applyMiddleware(...middleware, logger));
   }

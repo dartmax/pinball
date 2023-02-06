@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from "react";
+import React, {DetailedHTMLProps, FormHTMLAttributes, useCallback, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import fetchData from "../../hook/fetchData";
 
@@ -11,6 +11,7 @@ import {
 import { pinBallSelectors } from "../../store/pinBall/pinBall.selectors";
 import { requestSearchUrl } from "../../config/utils";
 import SmallLoader from "../loader/SmallLoader";
+import {AxiosResponse} from "axios";
 
 const PinBallMap = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -22,10 +23,10 @@ const PinBallMap = () => {
   const { filteredData, myLatitude, myLongitude } = useSelector(pinBallSelectors.getAllState);
 
   const handleMyCoords = useCallback(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
+    navigator.geolocation.getCurrentPosition((position: GeolocationPosition) => {
           dispatch(setMyLatitude(position.coords.latitude.toString()));
           dispatch(setMyLongitude(position.coords.longitude.toString()));
-        }, (error) => {
+        }, (error: GeolocationPositionError) => {
           console.error("Error Code = " + error.code + " - " + error.message)
         }
     )
@@ -40,7 +41,7 @@ const PinBallMap = () => {
     event.preventDefault();
   }
 
-  const handleSubmit = useCallback((event: any) => {
+  const handleSubmit = useCallback((event: React.FormEvent) => {
     event.preventDefault();
 
     setEventClick(!eventClick)
@@ -57,8 +58,7 @@ const PinBallMap = () => {
         createUrl
       ),
       setData
-    ).then((res: any) => {
-      console.log("res.data", res?.data)
+    ).then((res: AxiosResponse<any, any> | undefined) => {
       setIsLoading(!isLoading)
       dispatch(filteredDataActions(res?.data))
       setIsLoading(false)
