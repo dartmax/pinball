@@ -31,7 +31,7 @@
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
-    "test": "jest --transformIgnorePatterns \"node_modules/(?!axios)/\"",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -73,12 +73,6 @@
   "overrides": {
     "your-dependecy-package": {
       "axios": "1.2.6"
-    }
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "./mocks/fileMock.js",
-      "\\.(css|less)$": "./mocks/fileMock.js"
     }
   }
 }
