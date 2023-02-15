@@ -1,5 +1,6 @@
-const axios = require('axios');
+import axios from "axios";
 import fetchData from "../hook/fetchData";
+import { jest } from "@jest/globals";
 
 jest.mock("axios", () => {
     return {

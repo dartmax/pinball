@@ -25,6 +25,9 @@ Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
+## Add your MAP_TILER_KEY:
+    Register on maptiler.com, and copy your own key to env file
+
 ## Run test and coverage:
 
 Launches the test runner in the interactive watch mode.\

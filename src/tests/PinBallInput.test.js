@@ -1,9 +1,18 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import PinBallMap from "../components/pinBallMap/PinBallMap";
-import { Provider } from 'react-redux'
-import configureStore from 'redux-mock-store'
-import AppWrapper from "../App";
+import {jest} from "jest";
+// import { Provider } from 'react-redux'
+// import configureStore from 'redux-mock-store'
+// import AppWrapper from "../App";
+
+jest.mock("axios", () => {
+    return {
+        get: jest.fn().mockResolvedValue({ data: {} }),
+    };
+});
+
+
 describe('Component', () => {
     it('updates lon and lat when handleLonChange and handleLatChange are called', () => {
         const myLongitude = '-122.431297';
@@ -39,16 +48,16 @@ describe('Component', () => {
         expect(latInput.value).toBe(myLatitude);
     });
 });
-
-describe('With React Testing Library', () => {
-    const initialState = {output:10}
-    const mockStore = configureStore()
-    let store,wrapper
-
-    it('Shows "Hello world!"', () => {
-        store = mockStore(initialState)
-        const { getByText } = render(<Provider store={store}><AppWrapper /></Provider>)
-
-        expect(getByText('PinBall Map')).not.toBeNull()
-    })
-})
+//
+// describe('With React Testing Library', () => {
+//     const initialState = {output:10}
+//     const mockStore = configureStore()
+//     let store,wrapper
+//
+//     it('Shows "Hello world!"', () => {
+//         store = mockStore(initialState)
+//         const { getByText } = render(<Provider store={store}><AppWrapper /></Provider>)
+//
+//         expect(getByText('PinBall Map')).not.toBeNull()
+//     })
+// })

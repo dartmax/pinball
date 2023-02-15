@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-module.exports = { projectConfig: {
+module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -66,14 +66,14 @@ module.exports = { projectConfig: {
   // ],
 
   // An array of file extensions your modules use
-  // moduleFileExtensions: [
-  //   "js",
-  //   "jsx",
-  //   "ts",
-  //   "tsx",
-  //   "json",
-  //   "node"
-  // ],
+  moduleFileExtensions: [
+    "js",
+    "jsx",
+    "ts",
+    "tsx",
+    "json",
+    "node"
+  ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   // moduleNameMapper: {
@@ -135,10 +135,16 @@ module.exports = { projectConfig: {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "node",
+  testEnvironment: "jsdom",
 
   // Options that will be passed to the testEnvironment
-  // testEnvironmentOptions: {},
+  // testEnvironmentOptions: {
+  //   "browsers": [
+  //     "chrome",
+  //     "firefox",
+  //     "safari"
+  //   ]
+  // },
 
   // Adds a location field to test results
   // testLocationInResults: false,
@@ -170,13 +176,10 @@ module.exports = { projectConfig: {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  // "transform": {"\\.js$": "/tests/custom-transformer"}
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  transformIgnorePatterns: [
-    "/node_modules/",
-    "\\.pnp\\.[^\\/]+$"
-  ],
+  transformIgnorePatterns: ['/node_modules/(?!(axios)/)'],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
@@ -189,4 +192,4 @@ module.exports = { projectConfig: {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-}};
+};

@@ -1,8 +1,7 @@
-import React from 'react';
+import React from "react";
 import store from "./config/store";
 import {Provider} from "react-redux";
 
-import './index.scss';
 import Header from "./components/header/Header";
 import PinBallMap from "./components/pinBallMap/PinBallMap";
 

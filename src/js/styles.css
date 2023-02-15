@@ -1,0 +1,64 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    height: 95%;
+    cursor: pointer;
+}
+
+img:hover {
+    border-color: yellow;
+    border-width: 2px;
+    border-style: solid;
+}
+
+#carusel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55vw;
+    height: 10vw;
+    border-color: #dddddd;
+    border-style: solid;
+    border-color: black;
+    border-radius: 1vw;
+}
+
+.button {
+    width: 3vw;
+    height: 3vw;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 1vw;
+    font-size: 2vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+#pictures {
+    padding: 0;
+    margin: 0;
+    width: 95%;
+    height: 100%;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#greatest {
+    width: 55vw;
+    height: 55vw;
+    background-size: contain;
+    background-image: url(https://js.cx/carousel/1.png);
+}
