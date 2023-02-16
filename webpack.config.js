@@ -5,7 +5,7 @@ const fs = require("fs");
 module.exports = {
     devtool: "source-map",
     entry: {
-        main:path.resolve(__filename, './index.js'),
+        main:path.resolve(__dirname, './src'),
     },
     output: {
         path: path.resolve(__dirname, './dist'),
