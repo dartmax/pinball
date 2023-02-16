@@ -4,9 +4,6 @@ const fs = require("fs");
 
 module.exports = {
     devtool: "source-map",
-    entry: {
-        main:path.resolve(__dirname, 'root'),
-    },
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.js',
