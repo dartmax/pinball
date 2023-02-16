@@ -38,7 +38,7 @@
   },
   "scripts": {
     "start": "env-cmd -f .env react-scripts --openssl-legacy-provider start",
-    "build": "env-cmd -f .env webpack --mode=development",
+    "build": "env-cmd -f .env webpack",
     "test": "jest",
     "eject": "react-scripts eject"
   },

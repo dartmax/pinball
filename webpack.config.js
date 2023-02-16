@@ -4,6 +4,8 @@ const fs = require("fs");
 
 module.exports = {
     devtool: "source-map",
+    mode: 'development',
+    entry: ["@babel/polyfill", "react-hot-loader/patch", "index.html"],
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.js',
